@@ -8,7 +8,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="food_system.controller.MaterialController"
+            fx:controller="RestaurantManagementSystem.controller.MaterialController"
             prefHeight="400.0" prefWidth="600.0">
     <children>
         <Button layoutX="39.0" layoutY="80.0" mnemonicParsing="false" onAction="#toMainView" prefHeight="23.0" prefWidth="63.0" text="Main" textAlignment="CENTER" />
@@ -32,5 +32,6 @@
         <TextField fx:id="Search" layoutX="386.0" layoutY="44.0" onAction="#search" prefHeight="23.0" prefWidth="127.0" />
         <Label layoutX="334.0" layoutY="48.0" text="Search:" />
         <Button layoutX="518.0" layoutY="44.0" mnemonicParsing="false" onAction="#update" text="🔍" />
+        <Button layoutX="502.0" layoutY="338.0" mnemonicParsing="false" onAction="#update" text="Print" />
     </children>
 </AnchorPane>

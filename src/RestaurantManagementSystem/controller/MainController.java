@@ -1,6 +1,6 @@
-package food_system.controller;
+package RestaurantManagementSystem.controller;
 
-import food_system.model.Main;
+import RestaurantManagementSystem.model.Main;
 import javafx.fxml.FXML;
 
 public class MainController {

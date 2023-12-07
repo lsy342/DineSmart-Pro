@@ -1,15 +1,15 @@
-package food_system.model;
+package RestaurantManagementSystem.model;
 
 public class User {
     private String userID;
     private String userName;
     private String userPassword;
-    private String userAuthority;
+    private int userAuthority;
 
     public User() {
     }
 
-    public User(String userID, String userName, String userPassword, String userAuthority) {
+    public User(String userID, String userName, String userPassword, int userAuthority) {
         this.userID = userID;
         this.userName = userName;
         this.userPassword = userPassword;
@@ -40,11 +40,11 @@ public class User {
         this.userPassword = userPassword;
     }
 
-    public String getUserAuthority() {
+    public int getUserAuthority() {
         return userAuthority;
     }
 
-    public void setUserAuthority(String userAuthority) {
+    public void setUserAuthority(int userAuthority) {
         this.userAuthority = userAuthority;
     }
 }

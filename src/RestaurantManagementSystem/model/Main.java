@@ -1,4 +1,4 @@
-package food_system.model;
+package RestaurantManagementSystem.model;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -18,9 +18,9 @@ public class Main extends Application {
 
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) {
         Main.stage = stage;
-        stage.setTitle("Fast Food Billing System");
+        stage.setTitle("DineSmart Pro");
         try {
             changeView("../view/login.fxml");
             stage.show();

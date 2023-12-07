@@ -1,8 +1,6 @@
-package food_system.model;
+package RestaurantManagementSystem.model;
 
 import javafx.scene.control.Alert;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -88,8 +86,32 @@ public class OrderDAO {
         connection.close();
     }
 
-    public static void searchData() {
+    public static List<Order> searchData(String keyword) throws Exception {
+        List<Order> orderList = new ArrayList<>();
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/food_system", "root", "123456");
+        String sql = "Select * from `order` where orderNo like '%" + keyword + "%' or orderContent like '%" + keyword +
+                "%' or orderDate like '%" + keyword + "%' or orderPrice like '%" + keyword + "%'";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        //  metaData 存放当前结果集列的信息对象
+        ResultSetMetaData metaData = resultSet.getMetaData();
+        int columnCount = metaData.getColumnCount();
+        successAlert("search");
+        while (resultSet.next()) {
+            Order order = new Order();
+            for (int i = 1; i <= columnCount; i++) {
+                Object value = resultSet.getObject(i);
+                String columnLabel = metaData.getColumnLabel(i);
+                chooseFun(order, columnLabel, value);
+            }
+            orderList.add(order);
+        }
+        resultSet.close();
+        preparedStatement.close();
+        connection.close();
 
+        return orderList;
     }
 
 

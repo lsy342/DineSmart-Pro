@@ -1,8 +1,8 @@
-package food_system.controller;
+package RestaurantManagementSystem.controller;
 
-import food_system.model.Main;
-import food_system.model.Order;
-import food_system.model.OrderDAO;
+import RestaurantManagementSystem.model.Main;
+import RestaurantManagementSystem.model.Order;
+import RestaurantManagementSystem.model.OrderDAO;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;

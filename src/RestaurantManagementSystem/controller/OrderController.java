@@ -1,17 +1,15 @@
-package food_system.controller;
+package RestaurantManagementSystem.controller;
 
-import food_system.model.Main;
-import food_system.model.Order;
-import food_system.model.OrderDAO;
+import RestaurantManagementSystem.model.Main;
+import RestaurantManagementSystem.model.Order;
+import RestaurantManagementSystem.model.OrderDAO;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +24,8 @@ public class OrderController {
     private TableColumn<Order, Double> orderPrice;
     @FXML
     private TableColumn<Order, String> orderDate;
+    @FXML
+    private TextField search;
 
     @FXML
     public void initialize() throws Exception {
@@ -80,6 +80,18 @@ public class OrderController {
         }
     }
 
+    @FXML
+    public void search() throws Exception {
+        List<Order> orderList = OrderDAO.searchData(search.getText());
+
+        orderNo.setCellValueFactory(new PropertyValueFactory<>("orderNo"));
+        orderContent.setCellValueFactory(new PropertyValueFactory<>("orderContent"));
+        orderPrice.setCellValueFactory(new PropertyValueFactory<>("orderPrice"));
+        orderDate.setCellValueFactory(new PropertyValueFactory<>("orderDate"));
+
+        orderTable.setItems(FXCollections.observableList(orderList));
+    }
+
 
     @FXML
     public void insert() {
@@ -106,10 +118,7 @@ public class OrderController {
         toOrderView();
     }
 
-    @FXML
-    public void search() {
 
-    }
 }
 
 

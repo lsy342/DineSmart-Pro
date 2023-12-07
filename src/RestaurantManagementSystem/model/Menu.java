@@ -1,4 +1,4 @@
-package food_system.model;
+package RestaurantManagementSystem.model;
 
 public class Menu{
     private String menuNo;

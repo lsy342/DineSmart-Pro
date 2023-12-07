@@ -1,8 +1,8 @@
-package food_system.controller;
+package RestaurantManagementSystem.controller;
 
 
-import food_system.model.Main;
-import food_system.model.UserDAO;
+import RestaurantManagementSystem.model.Main;
+import RestaurantManagementSystem.model.UserDAO;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;

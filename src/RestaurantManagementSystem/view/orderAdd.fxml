@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="450.0" prefWidth="280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="food_system.controller.OrderAddController">
+<AnchorPane prefHeight="450.0" prefWidth="280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RestaurantManagementSystem.controller.OrderAddController">
    <children>
       <Label layoutX="38.0" layoutY="80.0" text="No:" />
       <Label layoutX="38.0" layoutY="130.0" text="Content:" />
