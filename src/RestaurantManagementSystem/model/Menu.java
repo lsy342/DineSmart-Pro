@@ -1,9 +1,20 @@
 package RestaurantManagementSystem.model;
 
-public class Menu{
+
+public class Menu {
     private String menuNo;
     private String menuName;
-    private String menuPrice;
+    private double menuPrice;
+
+    public Menu() {
+    }
+
+    public Menu(String menuNo, String menuName, double menuPrice) {
+        this.menuNo = menuNo;
+        this.menuName = menuName;
+        this.menuPrice = menuPrice;
+
+    }
 
     public String getMenuNo() {
         return menuNo;
@@ -21,11 +32,11 @@ public class Menu{
         this.menuName = menuName;
     }
 
-    public String getMenuPrice() {
+    public double getMenuPrice() {
         return menuPrice;
     }
 
-    public void setMenuPrice(String menuPrice) {
+    public void setMenuPrice(double menuPrice) {
         this.menuPrice = menuPrice;
     }
 }

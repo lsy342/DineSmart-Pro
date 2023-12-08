@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="450.0" prefWidth="280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RestaurantManagementSystem.controller.MenuAddController">
+    <children>
+        <Label layoutX="38.0" layoutY="80.0" text="No:" />
+        <Label layoutX="38.0" layoutY="130.0" text="Content:" />
+        <Label layoutX="38.0" layoutY="180.0" text="Price:" />
+        <TextField fx:id="menuNo" layoutX="99.0" layoutY="76.0" />
+        <TextField fx:id="menuName" layoutX="99.0" layoutY="126.0" />
+        <TextField fx:id="menuPrice" layoutX="99.0" layoutY="176.0" />
+        <Button layoutX="113.0" layoutY="382.0" mnemonicParsing="false" onAction="#insert" text="Update" />
+        <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#close" text="Back" />
+    </children>
+</AnchorPane>
