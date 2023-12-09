@@ -30,5 +30,6 @@
       <Label layoutX="334.0" layoutY="48.0" text="Search:" />
       <Button layoutX="518.0" layoutY="44.0" mnemonicParsing="false" onAction="#search" text="🔍" />
       <Button layoutX="502.0" layoutY="338.0" mnemonicParsing="false" onAction="#print" text="Print" />
+      <Button layoutX="450.0" layoutY="338.0" mnemonicParsing="false" onAction="#taxCalculate" text="Tax" />
    </children>
 </AnchorPane>

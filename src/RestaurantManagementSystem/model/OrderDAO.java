@@ -145,4 +145,24 @@ public class OrderDAO {
                 break;
         }
     }
+
+    public static double[] taxCalculate(java.sql.Date dateFrom, java.sql.Date dateTo) throws Exception {
+        double[] list = new double[2];
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/food_system", "root", "123456");
+        String sql = "SELECT SUM(orderPrice) FROM `order` WHERE orderDate BETWEEN ? AND ?;";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setObject(1, dateFrom);
+        preparedStatement.setObject(2, dateTo);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        if (resultSet.next()) {
+            double num = resultSet.getDouble(1);
+            list[0] = num;
+            list[1] = num * 0.05;
+        } else {
+            list[0] = 0;
+            list[1] = 0;
+        }
+        return list;
+    }
 }

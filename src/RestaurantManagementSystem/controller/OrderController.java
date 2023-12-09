@@ -80,6 +80,10 @@ public class OrderController {
         }
     }
 
+    private void addTaxCalculateView(){
+        Main.addView("../view/orderTaxCalculate.fxml");
+    }
+
     @FXML
     public void search() throws Exception {
         List<Order> orderList = OrderDAO.searchData(search.getText());
@@ -118,5 +122,10 @@ public class OrderController {
     @FXML
     public void print() {
         Main.successAlert("print");
+    }
+
+    @FXML
+    public void taxCalculate() {
+        addTaxCalculateView();
     }
 }
