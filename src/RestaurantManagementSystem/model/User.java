@@ -4,12 +4,12 @@ public class User {
     private String userID;
     private String userName;
     private String userPassword;
-    private int userAuthority;
+    private boolean userAuthority;
 
     public User() {
     }
 
-    public User(String userID, String userName, String userPassword, int userAuthority) {
+    public User(String userID, String userName, String userPassword, boolean userAuthority) {
         this.userID = userID;
         this.userName = userName;
         this.userPassword = userPassword;
@@ -40,11 +40,11 @@ public class User {
         this.userPassword = userPassword;
     }
 
-    public int getUserAuthority() {
+    public boolean getUserAuthority() {
         return userAuthority;
     }
 
-    public void setUserAuthority(int userAuthority) {
+    public void setUserAuthority(boolean userAuthority) {
         this.userAuthority = userAuthority;
     }
 }

@@ -35,7 +35,6 @@ public class MenuController {
         menuName.setCellValueFactory(new PropertyValueFactory<>("menuName"));
         menuPrice.setCellValueFactory(new PropertyValueFactory<>("menuPrice"));
 
-
         menuTable.setItems(FXCollections.observableList(menuList));
     }
 
@@ -90,30 +89,43 @@ public class MenuController {
         menuTable.setItems(FXCollections.observableList(menuList));
     }
 
-
     @FXML
     public void insert() {
-        addMenuAddView();
+        if (Main.readUser().getUserAuthority()) {
+            addMenuAddView();
+        } else {
+            Main.warningAlert();
+        }
     }
 
     @FXML
     public void update() {
-        addMenuUpdateView();
-    }
-
-
-    @FXML
-    public void delete() throws Exception {
-        Menu selectedMenu = menuTable.getSelectionModel().getSelectedItem();
-        if (selectedMenu != null) {
-            MenuDAO.deleteData(selectedMenu.getMenuNo());
+        if (Main.readUser().getUserAuthority()) {
+            addMenuUpdateView();
+        } else {
+            Main.warningAlert();
         }
     }
 
+    @FXML
+    public void delete() throws Exception {
+        if (Main.readUser().getUserAuthority()) {
+            Menu selectedMenu = menuTable.getSelectionModel().getSelectedItem();
+            if (selectedMenu != null) {
+                MenuDAO.deleteData(selectedMenu.getMenuNo());
+            }
+        } else {
+            Main.warningAlert();
+        }
+    }
 
     @FXML
     public void refresh() {
         toMenuView();
     }
-}
 
+    @FXML
+    public void print() {
+        Main.successAlert("print");
+    }
+}

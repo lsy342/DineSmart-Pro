@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -11,11 +12,11 @@ import java.net.URL;
 
 public class Main extends Application {
     private static Stage stage;
+    private static User currentUser;
 
     public static void main(String[] args) {
         launch(args);
     }
-
 
     @Override
     public void start(Stage stage) {
@@ -62,6 +63,30 @@ public class Main extends Application {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static void createUser(User user) {
+        currentUser = user;
+    }
+
+    public static User readUser() {
+        return currentUser;
+    }
+
+    public static void successAlert(String string) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Success");
+        alert.setHeaderText("Data " + string + " successful");
+        alert.setContentText("Please refresh the page!");
+        alert.showAndWait();
+    }
+
+    public static void warningAlert() {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Fail");
+        alert.setHeaderText("Insufficient privileges");
+        alert.setContentText("Please applying for increased permissions");
+        alert.showAndWait();
     }
 
     public static double formatDouble(double d) {

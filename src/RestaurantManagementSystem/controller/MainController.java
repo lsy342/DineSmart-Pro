@@ -10,7 +10,9 @@ public class MainController {
     }
 
     @FXML
-    public void toMaterialView() {Main.changeView("../view/material.fxml");}
+    public void toMaterialView() {
+        Main.changeView("../view/material.fxml");
+    }
 
     @FXML
     public void toOrderView() {
@@ -26,5 +28,4 @@ public class MainController {
     public void toReviewView() {
         Main.changeView("../view/review.fxml");
     }
-
 }

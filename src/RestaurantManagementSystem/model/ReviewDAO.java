@@ -2,13 +2,14 @@ package RestaurantManagementSystem.model;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
-public class MenuDAO {
-    public static List<Menu> readData(List<Menu> menuList) throws Exception {
+public class ReviewDAO {
+    public static List<Review> readData(List<Review> reviewList) throws Exception {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/food_system", "root", "123456");
-        String sql = "SELECT * FROM `menu`;";
+        String sql = "SELECT * FROM `review`;";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
         ResultSet resultSet = preparedStatement.executeQuery();
@@ -17,29 +18,30 @@ public class MenuDAO {
         int columnCount = metaData.getColumnCount();
 
         while (resultSet.next()) {
-            Menu menu = new Menu();
+            Review review = new Review();
             for (int i = 1; i <= columnCount; i++) {
                 Object value = resultSet.getObject(i);
                 String columnLabel = metaData.getColumnLabel(i);
-                chooseFun(menu, columnLabel, value);
+                chooseFun(review, columnLabel, value);
             }
-            menuList.add(menu);
+            reviewList.add(review);
         }
         resultSet.close();
         preparedStatement.close();
         connection.close();
 
-        return menuList;
+        return reviewList;
     }
 
-    public static void addData(String menuNo, String menuName, double menuPrice) throws Exception {
+    public static void addData(String reviewNo, String orderNo, String reviewContent, Date orderDate) throws Exception {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/food_system", "root", "123456");
-        String sql = "INSERT INTO `menu`(menuNo ,menuName, menuPrice) values(?,?,?)";
+        String sql = "INSERT INTO `review`(reviewNo ,orderNo, reviewContent,orderDate) values(?,?,?,?)";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
-        preparedStatement.setObject(1, menuNo);
-        preparedStatement.setObject(2, menuName);
-        preparedStatement.setObject(3, menuPrice);
+        preparedStatement.setObject(1, reviewNo);
+        preparedStatement.setObject(2, orderNo);
+        preparedStatement.setObject(3, reviewContent);
+        preparedStatement.setObject(4, orderDate);
 
         int rows = preparedStatement.executeUpdate();
         if (rows > 0) {
@@ -49,14 +51,15 @@ public class MenuDAO {
         connection.close();
     }
 
-    public static void updateData(String menuNo, String menuName, double menuPrice) throws Exception {
+    public static void updateData(String reviewNo, String orderNo, String reviewContent, Date orderDate) throws Exception {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/food_system", "root", "123456");
-        String sql = "UPDATE `menu` SET menuName=?, menuPrice=?  WHERE menuNo=?";
+        String sql = "UPDATE `review` SET reviewNo=?, orderNo=?, reviewContent=? WHERE orderDate=?";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
-        preparedStatement.setObject(1, menuName);
-        preparedStatement.setObject(2, menuPrice);
-        preparedStatement.setObject(3, menuNo);
+        preparedStatement.setObject(1, reviewNo);
+        preparedStatement.setObject(2, orderNo);
+        preparedStatement.setObject(3, reviewContent);
+        preparedStatement.setObject(4, orderDate);
         int rows = preparedStatement.executeUpdate();
         if (rows > 0) {
             Main.successAlert("update");
@@ -65,11 +68,28 @@ public class MenuDAO {
         connection.close();
     }
 
-    public static List<Menu> searchData(String keyword) throws Exception {
-        List<Menu> menuList = new ArrayList<>();
+    public static void updateData(String reviewNo, String orderNo, String reviewContent) throws Exception {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/food_system", "root", "123456");
-        String sql = "Select * from `menu` where menuNo like '%" + keyword + "%' or menuName like '%" + keyword + "%' or menuPrice like '%" + keyword + "%'";
+        String sql = "UPDATE `review` SET reviewNo=?, orderNo=?WHERE reviewContent=?";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setObject(1, reviewNo);
+        preparedStatement.setObject(2, orderNo);
+        preparedStatement.setObject(3, reviewContent);
+        int rows = preparedStatement.executeUpdate();
+        if (rows > 0) {
+            Main.successAlert("update");
+        }
+        preparedStatement.close();
+        connection.close();
+    }
+
+    public static List<Review> searchData(String keyword) throws Exception {
+        List<Review> reviewList = new ArrayList<>();
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/food_system", "root", "123456");
+        String sql = "Select * from `review` where reviewNo like '%" + keyword + "%' or orderNo like '%" + keyword +
+                "%' or reviewContent like '%" + keyword + "%' or orderDate like '%" + keyword + "%'";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         ResultSet resultSet = preparedStatement.executeQuery();
         //  metaData 存放当前结果集列的信息对象
@@ -77,28 +97,28 @@ public class MenuDAO {
         int columnCount = metaData.getColumnCount();
         Main.successAlert("search");
         while (resultSet.next()) {
-            Menu menu = new Menu();
+            Review review = new Review();
             for (int i = 1; i <= columnCount; i++) {
                 Object value = resultSet.getObject(i);
                 String columnLabel = metaData.getColumnLabel(i);
-                chooseFun(menu, columnLabel, value);
+                chooseFun(review, columnLabel, value);
             }
-            menuList.add(menu);
+            reviewList.add(review);
         }
         resultSet.close();
         preparedStatement.close();
         connection.close();
 
-        return menuList;
+        return reviewList;
     }
 
 
-    public static void deleteData(String menuNo) throws Exception {
+    public static void deleteData(String reviewNo) throws Exception {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/food_system", "root", "123456");
-        String sql = "DELETE FROM `menu` WHERE menuNo=?";
+        String sql = "DELETE FROM `review` WHERE reviewNo=?";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
-        preparedStatement.setObject(1, menuNo);
+        preparedStatement.setObject(1, reviewNo);
         int rows = preparedStatement.executeUpdate();
         if (rows > 0) {
             Main.successAlert("delete");
@@ -108,19 +128,21 @@ public class MenuDAO {
     }
 
     //chooseFun：向该menu对象（数据库的一行）的某一属性传参
-    public static void chooseFun(Menu menu, String funName, Object value) {
+    public static void chooseFun(Review review, String funName, Object value) {
         switch (funName) {
-            case "menuNo":
-                menu.setMenuNo((String) value);
+            case "reviewNo":
+                review.setReviewNo((String) value);
                 break;
-            case "menuName":
-                menu.setMenuName((String) value);
+            case "orderNo":
+                review.setOrderNo((String) value);
                 break;
-            case "menuPrice":
-                value = Main.formatDouble((Double) value);
-                menu.setMenuPrice((Double) value);
+            case "reviewContent":
+                review.setReviewContent((String) value);
                 break;
-
+            case "orderDate":
+                review.setOrderDate((Date) value);
+                break;
         }
     }
 }
+

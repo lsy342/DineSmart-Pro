@@ -92,7 +92,6 @@ public class OrderController {
         orderTable.setItems(FXCollections.observableList(orderList));
     }
 
-
     @FXML
     public void insert() {
         addOrderAddView();
@@ -103,7 +102,6 @@ public class OrderController {
         addOrderUpdateView();
     }
 
-
     @FXML
     public void delete() throws Exception {
         Order selectedOrder = orderTable.getSelectionModel().getSelectedItem();
@@ -112,13 +110,13 @@ public class OrderController {
         }
     }
 
-
     @FXML
     public void refresh() {
         toOrderView();
     }
 
-
+    @FXML
+    public void print() {
+        Main.successAlert("print");
+    }
 }
-
-

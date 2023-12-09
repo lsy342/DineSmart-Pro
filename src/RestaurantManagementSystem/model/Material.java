@@ -1,11 +1,13 @@
 package RestaurantManagementSystem.model;
 
+import java.util.Date;
+
 public class Material {
     private String materialNo;
     private String materialName;
     private double materialUnitPrice;
     private int materialNumber;
-    private String materialDate;
+    private Date materialDate;
     private String materialType;
 
     public String getMaterialNo() {
@@ -40,11 +42,11 @@ public class Material {
         this.materialNumber = materialNumber;
     }
 
-    public String getMaterialDate() {
+    public Date getMaterialDate() {
         return materialDate;
     }
 
-    public void setMaterialDate(String materialDate) {
+    public void setMaterialDate(Date materialDate) {
         this.materialDate = materialDate;
     }
 

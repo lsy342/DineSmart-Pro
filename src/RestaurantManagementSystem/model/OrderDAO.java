@@ -1,7 +1,5 @@
 package RestaurantManagementSystem.model;
 
-import javafx.scene.control.Alert;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Date;
@@ -47,7 +45,7 @@ public class OrderDAO {
 
         int rows = preparedStatement.executeUpdate();
         if (rows > 0) {
-            successAlert("add");
+            Main.successAlert("add");
         }
         preparedStatement.close();
         connection.close();
@@ -64,7 +62,7 @@ public class OrderDAO {
         preparedStatement.setObject(4, orderNo);
         int rows = preparedStatement.executeUpdate();
         if (rows > 0) {
-            successAlert("update");
+            Main.successAlert("update");
         }
         preparedStatement.close();
         connection.close();
@@ -80,7 +78,7 @@ public class OrderDAO {
         preparedStatement.setObject(3, orderNo);
         int rows = preparedStatement.executeUpdate();
         if (rows > 0) {
-            successAlert("update");
+            Main.successAlert("update");
         }
         preparedStatement.close();
         connection.close();
@@ -97,7 +95,7 @@ public class OrderDAO {
         //  metaData 存放当前结果集列的信息对象
         ResultSetMetaData metaData = resultSet.getMetaData();
         int columnCount = metaData.getColumnCount();
-        successAlert("search");
+        Main.successAlert("search");
         while (resultSet.next()) {
             Order order = new Order();
             for (int i = 1; i <= columnCount; i++) {
@@ -123,18 +121,10 @@ public class OrderDAO {
         preparedStatement.setObject(1, orderNo);
         int rows = preparedStatement.executeUpdate();
         if (rows > 0) {
-            successAlert("delete");
+            Main.successAlert("delete");
         }
         preparedStatement.close();
         connection.close();
-    }
-
-    public static void successAlert(String string) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Success");
-        alert.setHeaderText("Data " + string + " successful");
-        alert.setContentText("Please refresh the page!");
-        alert.showAndWait();
     }
 
     //chooseFun：向该order对象（数据库的一行）的某一属性传参

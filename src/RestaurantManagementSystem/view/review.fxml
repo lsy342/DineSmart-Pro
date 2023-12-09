@@ -7,18 +7,19 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RestaurantManagementSystem.controller.MenuController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RestaurantManagementSystem.controller.ReviewController">
     <children>
         <Button layoutX="39.0" layoutY="80.0" mnemonicParsing="false" onAction="#toMainView" prefHeight="23.0" prefWidth="63.0" text="Main" textAlignment="CENTER" />
         <Button layoutX="39.0" layoutY="130.0" mnemonicParsing="false" onAction="#toMaterialView" prefHeight="23.0" prefWidth="63.0" text="Material" textAlignment="CENTER" />
         <Button layoutX="39.0" layoutY="180.0" mnemonicParsing="false" onAction="#toOrderView" prefHeight="23.0" prefWidth="63.0" text="Order" textAlignment="CENTER" />
         <Button layoutX="39.0" layoutY="230.0" mnemonicParsing="false" onAction="#toMenuView" prefHeight="23.0" prefWidth="63.0" text="Menu" textAlignment="CENTER" />
         <Button layoutX="39.0" layoutY="280.0" mnemonicParsing="false" onAction="#toReviewView" prefHeight="23.0" prefWidth="63.0" text="Review" textAlignment="CENTER" />
-        <TableView fx:id="menuTable" layoutX="131.0" layoutY="80.0" prefHeight="239.0" prefWidth="415.0">
+        <TableView fx:id="reviewTable" layoutX="131.0" layoutY="80.0" prefHeight="239.0" prefWidth="415.0">
             <columns>
-                <TableColumn fx:id="menuNo" prefWidth="113" text="No" />
-                <TableColumn fx:id="menuName" minWidth="0.0" prefWidth="210" text="Name" />
-                <TableColumn fx:id="menuPrice" minWidth="0.0" prefWidth="89" text="Price" />
+                <TableColumn fx:id="reviewNo" prefWidth="63" text="mainNo" />
+                <TableColumn fx:id="orderNo" minWidth="0.0" prefWidth="55" text="orderNo" />
+                <TableColumn fx:id="reviewContent" prefWidth="202" text="Content" />
+                <TableColumn fx:id="orderDate" minWidth="0.0" prefWidth="92" text="Date" />
             </columns>
         </TableView>
         <Button layoutX="131.0" layoutY="338.0" mnemonicParsing="false" onAction="#insert" text="Add" />
@@ -31,3 +32,4 @@
         <Button layoutX="502.0" layoutY="338.0" mnemonicParsing="false" onAction="#print" text="Print" />
     </children>
 </AnchorPane>
+

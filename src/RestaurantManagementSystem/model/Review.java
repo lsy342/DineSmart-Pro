@@ -1,11 +1,21 @@
 package RestaurantManagementSystem.model;
 
+import java.util.Date;
 public class Review {
     private String reviewNo;
     private String orderNo;
     private String reviewContent;
-    private String orderDate;
+    private Date orderDate;
 
+    public Review() {
+    }
+
+    public Review(String reviewNo, String orderNo, String reviewContent, Date orderDate) {
+        this.reviewNo = reviewNo;
+        this.orderNo = orderNo;
+        this.reviewContent = reviewContent;
+        this.orderDate = orderDate;
+    }
     public String getReviewNo() {
         return reviewNo;
     }
@@ -30,11 +40,11 @@ public class Review {
         this.reviewContent = reviewContent;
     }
 
-    public String getOrderDate() {
+    public Date getOrderDate() {
         return orderDate;
     }
 
-    public void setOrderDate(String orderDate) {
+    public void setOrderDate(Date orderDate) {
         this.orderDate = orderDate;
     }
 }
