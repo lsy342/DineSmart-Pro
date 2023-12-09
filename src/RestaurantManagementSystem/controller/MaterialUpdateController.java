@@ -52,7 +52,7 @@ public class MaterialUpdateController {
                     Integer.parseInt(materialNumber.getText()), materialType.getText());
         } else {
             MaterialDAO.updateData(materialNo.getText(), materialName.getText(), Double.parseDouble(materialUnitPrice.getText()),
-                    Integer.parseInt(materialNumber.getText()),java.sql.Date.valueOf(materialDate.getValue()), materialType.getText());
+                    Integer.parseInt(materialNumber.getText()), java.sql.Date.valueOf(materialDate.getValue()), materialType.getText());
         }
     }
 }

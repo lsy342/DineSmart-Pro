@@ -58,12 +58,12 @@ public class MaterialDAO {
         Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/food_system", "root", "123456");
         String sql = "UPDATE `material` SET materialName=?, materialUnitPrice=?, materialNumber=?, materialDate=?, materialType=? WHERE materialNo=?";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
-        preparedStatement.setObject(1, materialNo);
-        preparedStatement.setObject(2, materialName);
-        preparedStatement.setObject(3, materialUnitPrice);
-        preparedStatement.setObject(4, materialNumber);
-        preparedStatement.setObject(5, materialDate);
-        preparedStatement.setObject(6, materialType);
+        preparedStatement.setObject(1, materialName);
+        preparedStatement.setObject(2, materialUnitPrice);
+        preparedStatement.setObject(3, materialNumber);
+        preparedStatement.setObject(4, materialDate);
+        preparedStatement.setObject(5, materialType);
+        preparedStatement.setObject(6, materialNo);
         int rows = preparedStatement.executeUpdate();
         if (rows > 0) {
             Main.successAlert("update");
