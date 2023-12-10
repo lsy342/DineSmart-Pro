@@ -44,18 +44,18 @@
 该项目采用 MVC 模式, 即 Model-View-Controller（模型-视图-控制器） 模式。
 ### 按项目结构看：
 #### Model（模型）：
-模型代表一个存取数据的对象或 JAVA POJO。它也可以带有逻辑，在数据变化时更新控制器。
+模型代表一个存取数据的对象或 JAVA POJO。它也可以带有逻辑，在数据变化时更新控制器。  
 Main.java  
-Material.java
-MaterialDAO.java
-Menu.java
-MenuDAO.java
-Order.java
-OrderDAO.java
-Review.java
-ReviewDAO.java
-User.java
-UserDAO.java
+Material.java  
+MaterialDAO.java  
+Menu.java  
+MenuDAO.java  
+Order.java  
+OrderDAO.java  
+Review.java  
+ReviewDAO.java  
+User.java  
+UserDAO.java  
 #### View（视图） :
 视图代表模型包含的数据的可视化。
 login.fxml
