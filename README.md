@@ -15,8 +15,8 @@
 功能：
 =================
 
-用户（店员、管理员）权限管理
-重新整理上述功能，提供完善的用户权限管理，确保信息安全和业务顺畅进行。
+### 用户权限管理
+重新整理上述功能，提供完善的用户（店员、管理员）权限管理，确保信息安全和业务顺畅进行。
 
 ### 账单记录
 记录客户的订单并可进行编辑、修改、删除。
@@ -46,8 +46,8 @@ Introduction:
 Features:
 =================
 
-### User (Clerk, Administrator) Permission Management
-Rearrange the above functions, providing comprehensive user permission management to ensure information security and smooth business operations.
+### UserPermission Management
+Rearrange the above functions, providing comprehensive user permission management (Clerk, Administrator)   to ensure information security and smooth business operations.
 
 ### Invoice Records
 Record customer orders with options for editing, modification, and deletion.
