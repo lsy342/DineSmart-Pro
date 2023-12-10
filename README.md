@@ -1,4 +1,12 @@
 # DineSmart-Pro
+⚡技术
+=================
+<div align="left">
+    <img src="https://img.shields.io/badge/Java-1.8%2B-%23437291?logo=openjdk&logoColor=%23437291"/>
+    <img src="https://img.shields.io/badge/mysql-connector-j-8.2.0%23437291?logo=Spring&logoColor=%236DB33F&color=%236DB33F"/>
+    <img src="https://img.shields.io/badge/javafx-sdk-21.0.1%23437291?logo=SpringBoot&logoColor=%236DB33F&color=%236DB33F"/>
+</div>
+
 简介：
 =================
 "DineSmart Pro 餐厅管理系统" 是一款专业的餐饮业务管理工具，为餐馆提供全面的解决方案。该系统集成了多种功能，以提高餐厅运营效率，改善客户服务体验。通过 DineSmart Pro，餐厅管理者能够轻松处理订单、管理菜单、追踪库存、进行财务分析，实现全面的业务掌控。系统界面简洁直观，易于使用，适用于各类餐饮场所，是提升餐厅管理水平的得力助手。
