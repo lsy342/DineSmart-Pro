@@ -132,3 +132,69 @@ Track the purchase of food ingredients, utensils, and building materials.
 
 ### Funds Management
 Display all transactions and generate relevant reports.
+
+🌱 Project Analysis
+=================
+
+This project follows the MVC (Model-View-Controller) pattern.
+### Project Structure:
+#### Model:
+The model represents an object that accesses data or a Java POJO. It can also have logic to update the controller when data changes.
+- Main.java  
+- Material.java  
+- MaterialDAO.java  
+- Menu.java  
+- MenuDAO.java  
+- Order.java  
+- OrderDAO.java  
+- Review.java  
+- ReviewDAO.java  
+- User.java  
+- UserDAO.java  
+
+#### View:
+The view represents the visualization of the data contained in the model.
+- login.fxml  
+- main.fxml  
+- material.fxml  
+- materialAdd.fxml  
+- materialUpdate.fxml  
+- menu.fxml  
+- menuAdd.fxml  
+- menuUpdate.fxml  
+- order.fxml  
+- orderAdd.fxml  
+- orderTaxCalculate.fxml  
+- orderUpdate.fxml  
+- reviewfxml  
+- reviewAdd.fxml  
+- reviewUpdate.fxml  
+
+#### Controller:
+The controller operates on both the model and the view. It controls the flow of data to the model and updates the view when the data changes, keeping the view separate from the model.
+- LoginController.java  
+- MainController.java  
+- MaterialAddController.java  
+- MaterialController.java  
+- MaterialUpdateController.java  
+- MenuAddController.java  
+- MenuController.java  
+- MenuUpdateController.java  
+- OrderAddController.java  
+- OrderController.java  
+- OrderTaxCalculateController.java  
+- OrderUpdateController.java  
+- ReviewAddController.java  
+- ReviewController.java  
+- ReviewUpdateController.java  
+
+### Detailed Functionality:
+Here are examples of the implementation of the Login and Order pages.
+
+#### Login Page:
+- User.java: This is a simple Java class representing a user object in the restaurant management system. It has some properties, a default constructor, a parameterized constructor, and getter and setter methods for each property. Instances of this class are used to represent and manipulate user information in the program.
+- UserDAO.java: This is a Data Access Object (DAO) class used to interact with the database. It separates the business logic of the application from the details of data storage (usually a database). The `isValidUser` method is responsible for validating the user's login information by querying the user table in the database to check if the entered username and password match. Depending on the match result, the method returns a boolean indicating the success of the validation. Additionally, a simple `chooseFun` method maps user information from the query result to the User object.
+- login.fxml: This is an FXML file, defining the layout of the login interface. It includes two text input fields (for username and password), two labels (for username and password labels), a button (for executing the login operation), and an AnchorPane container. The FXML file associates UI elements with Java code member variables through the `fx:id` attribute, allowing easy access and manipulation of these UI elements in the `LoginController`.
+- LoginController.java: This Java class serves as the controller part in the MVC architecture. `LoginController` contains a method `handleLogin` to handle the login operation, which validates the user login by calling the `isValidUser` method from `UserDAO`. If validation is successful, it calls `showWelcomeDialog` to display a login success prompt and switches to the main interface (`main.fxml`). If validation fails, it calls `showAlert` to display a login failure prompt.
+
+In summary, `login.fxml` defines the appearance of the login interface, `UserDAO.java` handles interactions with the database, and `LoginController.java` manages the logical control of the user interface. This MVC architecture helps organize and maintain the code, making the functionality of each part clear and easy to understand and modify.
