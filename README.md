@@ -53,8 +53,10 @@
 ### 按具体功能看：
 在这里举例Login和Order页面的实现
 #### Login页面:
+- User.java:
+- UserDAO.java：
 - login.fxml:
-- 
+- LoginController.java：
 
 
 👋Introduction:
