@@ -4,7 +4,7 @@
 <div align="left">
     <img src="https://img.shields.io/badge/Java-1.8%2B-%23437291?logo=openjdk&logoColor=%23437291"/>
     <img src="https://img.shields.io/badge/mysql-8%2B-%23437291?logo=openjdk&logoColor=%23437291"/>
-    <img src="https://img.shields.io/badge/jdbc-8.2%2B-%23437291?logo=openjdk&logoColor=%23437291"/>
+    <img src="https://img.shields.io/badge/jdbc-8.2.0-brightgreen"/>
     <img src="https://img.shields.io/badge/javafx-21.0.1-brightgreen"/>
 </div>
 
