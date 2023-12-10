@@ -53,7 +53,7 @@
 ### 按具体功能看：
 在这里举例Login和Order页面的实现
 #### Login页面:
-- **User.java:**这是一个简单的 Java 类，代表了餐厅管理系统中的用户对象，并且具有一些属性。类中包含了默认构造函数和一个带有参数的构造函数，以及用于获取和设置每个属性值的 getter 和 setter 方法。这个类的实例用于在程序中表示和操作用户信息。
+-  **User.java:**这是一个简单的 Java 类，代表了餐厅管理系统中的用户对象，并且具有一些属性。类中包含了默认构造函数和一个带有参数的构造函数，以及用于获取和设置每个属性值的 getter 和 setter 方法。这个类的实例用于在程序中表示和操作用户信息。
 - UserDAO.java：这是一个用于与数据库进行交互的数据访问对象（DAO）类。DAO 是数据访问对象（Data Access Object）的缩写，它是一种设计模式，用于将应用程序的业务逻辑与数据存储（通常是数据库）的访问细节分离开来。其中的isValidUser方法负责验证用户的登录信息是否有效，通过查询数据库中的用户表（user表）来判断输入的用户名和密码是否匹配。根据匹配结果，该方法会返回一个布尔值，表示验证是否成功。同时，使用了一个简单的chooseFun方法将查询结果中的用户信息映射到User对象中。
 - login.fxml:这是一个FXML（JavaFX的XML-based用户界面描述语言）文件，定义了登录界面的布局。包含了两个文本输入框（用户名和密码）、两个标签（用户名和密码的标签）、一个按钮（用于执行登录操作）以及一个AnchorPane容器。FXML文件通过fx:id属性将UI元素与Java代码中的成员变量关联起来，使得在LoginController中可以轻松地访问和操作这些UI元素。
 - LoginController.java：这是一个Java类，作为MVC架构中的控制器（Controller）部分。LoginController包含了处理登录操作的方法handleLogin，该方法通过调用UserDAO中的isValidUser方法验证用户登录。如果验证成功，会调用showWelcomeDialog显示登录成功的提示框，并切换到主界面（main.fxml）。如果验证失败，则会调用showAlert方法显示登录失败的提示框。
