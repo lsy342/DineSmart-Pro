@@ -45,58 +45,58 @@
 ### 按项目结构看：
 #### Model（模型）：
 模型代表一个存取数据的对象或 JAVA POJO。它也可以带有逻辑，在数据变化时更新控制器。  
-    Main.java  
-    Material.java  
-    MaterialDAO.java  
-    Menu.java  
-    MenuDAO.java  
-    Order.java  
-    OrderDAO.java  
-    Review.java  
-    ReviewDAO.java  
-    User.java  
-    UserDAO.java  
+-  Main.java  
+-  Material.java  
+-  MaterialDAO.java  
+-  Menu.java  
+-  MenuDAO.java  
+-  Order.java  
+-  OrderDAO.java  
+-  Review.java  
+-  ReviewDAO.java  
+-  User.java  
+-  UserDAO.java  
 #### View（视图） :
 视图代表模型包含的数据的可视化。
-    login.fxml  
-    main.fxml  
-    material.fxml  
-    materialAdd.fxml  
-    materialUpdate.fxml  
-    menu.fxml  
-    menuAdd.fxml  
-    menuUpdate.fxml  
-    order.fxml  
-    orderAdd.fxml  
-    orderTaxCalculate.fxml  
-    orderUpdate.fxml  
-    reviewfxml  
-    reviewAdd.fxml  
-    reviewUpdate.fxml  
+-  login.fxml  
+-  main.fxml  
+-  material.fxml  
+-  materialAdd.fxml  
+-  materialUpdate.fxml  
+-  menu.fxml  
+-  menuAdd.fxml  
+-  menuUpdate.fxml  
+-  order.fxml  
+-  orderAdd.fxml  
+-  orderTaxCalculate.fxml  
+-  orderUpdate.fxml  
+-  reviewfxml  
+-  reviewAdd.fxml  
+-  reviewUpdate.fxml  
 #### Controller（控制器）: 
 控制器作用于模型和视图上。它控制数据流向模型对象，并在数据变化时更新视图。它使视图与模型分离开。
-    LoginController.java  
-    MainController.java  
-    MaterialAddController.java  
-    MaterialController.java  
-    MaterialUpdateController.java  
-    MenuAddControllerjava  
-    MenuController.java  
-    MenuUpdateController.iava  
-    OrderAddController.java  
-    OrderController.java  
-    OrderTaxCalculateController.java  
-    OrderUpdateController.java  
-    ReviewAddController.java  
-    ReviewController.java  
-    ReviewUpdateController.java  
+-  LoginController.java  
+-  MainController.java  
+-  MaterialAddController.java  
+-  MaterialController.java  
+-  MaterialUpdateController.java  
+-  MenuAddControllerjava  
+-  MenuController.java  
+-  MenuUpdateController.iava  
+-  OrderAddController.java  
+-  OrderController.java  
+-  OrderTaxCalculateController.java  
+-  OrderUpdateController.java  
+-  ReviewAddController.java  
+-  ReviewController.java  
+-  ReviewUpdateController.java  
 
 ### 按具体功能看：
 在这里举例Login和Order页面的实现
 #### Login页面:
--  **User.java:**这是一个简单的 Java 类，代表了餐厅管理系统中的用户对象，并且具有一些属性。类中包含了默认构造函数和一个带有参数的构造函数，以及用于获取和设置每个属性值的 getter 和 setter 方法。这个类的实例用于在程序中表示和操作用户信息。
+-  User.java：这是一个简单的 Java 类，代表了餐厅管理系统中的用户对象，并且具有一些属性。类中包含了默认构造函数和一个带有参数的构造函数，以及用于获取和设置每个属性值的 getter 和 setter 方法。这个类的实例用于在程序中表示和操作用户信息。
 - UserDAO.java：这是一个用于与数据库进行交互的数据访问对象（DAO）类。DAO 是数据访问对象（Data Access Object）的缩写，它是一种设计模式，用于将应用程序的业务逻辑与数据存储（通常是数据库）的访问细节分离开来。其中的isValidUser方法负责验证用户的登录信息是否有效，通过查询数据库中的用户表（user表）来判断输入的用户名和密码是否匹配。根据匹配结果，该方法会返回一个布尔值，表示验证是否成功。同时，使用了一个简单的chooseFun方法将查询结果中的用户信息映射到User对象中。
-- login.fxml:这是一个FXML（JavaFX的XML-based用户界面描述语言）文件，定义了登录界面的布局。包含了两个文本输入框（用户名和密码）、两个标签（用户名和密码的标签）、一个按钮（用于执行登录操作）以及一个AnchorPane容器。FXML文件通过fx:id属性将UI元素与Java代码中的成员变量关联起来，使得在LoginController中可以轻松地访问和操作这些UI元素。
+- login.fxml：这是一个FXML（JavaFX的XML-based用户界面描述语言）文件，定义了登录界面的布局。包含了两个文本输入框（用户名和密码）、两个标签（用户名和密码的标签）、一个按钮（用于执行登录操作）以及一个AnchorPane容器。FXML文件通过fx:id属性将UI元素与Java代码中的成员变量关联起来，使得在LoginController中可以轻松地访问和操作这些UI元素。
 - LoginController.java：这是一个Java类，作为MVC架构中的控制器（Controller）部分。LoginController包含了处理登录操作的方法handleLogin，该方法通过调用UserDAO中的isValidUser方法验证用户登录。如果验证成功，会调用showWelcomeDialog显示登录成功的提示框，并切换到主界面（main.fxml）。如果验证失败，则会调用showAlert方法显示登录失败的提示框。
 
 总体而言，login.fxml定义了登录界面的外观，UserDAO.java处理与数据库的交互，而LoginController.java负责用户界面的逻辑控制。这样的MVC架构有助于代码的组织和维护，使得各部分的功能分明，易于理解和修改。
