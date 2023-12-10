@@ -33,3 +33,30 @@
 Introduction:
 =================
 "DineSmart Pro - Restaurant Management System" is a professional tool designed to streamline restaurant operations and enhance overall efficiency. This system offers a comprehensive solution for restaurant management, integrating a variety of features to optimize both front-end and back-end processes. With DineSmart Pro, restaurant owners can easily handle orders, manage menus, track inventory, and perform financial analysis, gaining full control over their business operations. The system boasts an intuitive and user-friendly interface, making it suitable for various types of dining establishments and serving as a valuable asset for elevating restaurant management standards.
+
+Features:
+=================
+
+### User (Clerk, Administrator) Permission Management
+Rearrange the above functions, providing comprehensive user permission management to ensure information security and smooth business operations.
+
+### Invoice Records
+Record customer orders with options for editing, modification, and deletion.
+
+### Menu Management
+Add, edit, and delete menu items.
+
+### Automatic Tax Management
+Consolidate tax payments and remind administrators to pay in a timely manner.
+
+### Printing
+Print order receipts.
+
+### Customer Reviews
+Record feedback and suggestions from customers on dishes and services.
+
+### Ingredient Records
+Track the purchase of food ingredients, utensils, and building materials.
+
+### Funds Management
+Display all transactions and generate relevant reports.
