@@ -45,10 +45,51 @@
 ### 按项目结构看：
 #### Model（模型）：
 模型代表一个存取数据的对象或 JAVA POJO。它也可以带有逻辑，在数据变化时更新控制器。
+Main.java
+Material.java
+MaterialDAO.java
+Menu.java
+MenuDAO.java
+Order.java
+OrderDAO.java
+Review.java
+ReviewDAO.java
+User.java
+UserDAO.java
 #### View（视图） :
 视图代表模型包含的数据的可视化。
+login.fxml
+main.fxml
+material.fxml
+materialAdd.fxml
+materialUpdate.fxml
+menu.fxml
+menuAdd.fxml
+menuUpdate.fxml
+order.fxml
+orderAdd.fxml
+orderTaxCalculate.fxml
+orderUpdate.fxml
+reviewfxml
+reviewAdd.fxml
+reviewUpdate.fxml
 #### Controller（控制器）: 
 控制器作用于模型和视图上。它控制数据流向模型对象，并在数据变化时更新视图。它使视图与模型分离开。
+LoginController.java
+MainController.java
+MaterialAddController.java
+MaterialController.java
+MaterialUpdateController.java
+MenuAddControllerjava
+MenuController.java
+MenuUpdateController.iava
+OrderAddController.java
+OrderController.java
+OrderTaxCalculateController.java
+OrderUpdateController.java
+ReviewAddController.java
+ReviewController.java
+ReviewUpdateController.java
 
 ### 按具体功能看：
 在这里举例Login和Order页面的实现
