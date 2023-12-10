@@ -45,7 +45,7 @@
 ### 按项目结构看：
 #### Model（模型）：
 模型代表一个存取数据的对象或 JAVA POJO。它也可以带有逻辑，在数据变化时更新控制器。
-Main.java
+Main.java  
 Material.java
 MaterialDAO.java
 Menu.java
